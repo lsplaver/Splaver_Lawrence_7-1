@@ -1,5 +1,8 @@
 ﻿@{ 
     Layout = "_Layout";
+    string area = ViewContext.RouteData.Values["area"].ToString();
+    string controller = ViewContext.RouteData.Values["controller"].ToString();
+    string action = ViewContext.RouteData.Values["action"].ToString();
 }
 
 <!DOCTYPE html>
@@ -11,6 +14,16 @@
 </head>
 <body>
     <div>
+        <div class="container">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link @(area == "Help" && controller == "Home" && action == "Index" ? "active" : "")" asp-area="Help" asp-controller="Home" asp-action="Index">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link @(area == "Help" && controller == "Tutorial" && action == "Index" ? "active" : "")" asp-area="Help" asp-controller="Tutorial" asp-action="Index" asp-route-id="1">Tutorial</a>
+                </li>
+            </ul>
+        </div>
         @RenderBody()
     </div>
 </body>

@@ -1,4 +1,13 @@
 ﻿@{ 
+    string area = "";
+    if (ViewContext.RouteData.Values["area"] == null)
+    {
+        area = "";
+    }
+    else
+    {
+        area = ViewContext.RouteData.Values["area"].ToString();
+    }
     string controller = ViewContext.RouteData.Values["controller"].ToString();
     string action = ViewContext.RouteData.Values["action"].ToString();
 }
@@ -16,9 +25,9 @@
         <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
             <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">My Website</a>
             <div class="navbar-nav mr-auto">
-                <a class="nav-link @(controller == "Home" && action == "Index" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                <a class="nav-link @(controller == "Home" && action == "About" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="About">About</a>
-                <a class="nav-link @(controller == "Home" && action == "Contact" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="Contact">Contact</a>
+                <a class="nav-link @(area == "" && controller == "Home" && action == "Index" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                <a class="nav-link @(area == "" && controller == "Home" && action == "About" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="About">About</a>
+                <a class="nav-link @(area == "" && controller == "Home" && action == "Contact" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="Contact">Contact</a>
             </div>
             <div class="navbar-nav navba-right">
                 <a class="nav-link" asp-area="Help" asp-controller="Home" asp-action="Index">Help</a>
