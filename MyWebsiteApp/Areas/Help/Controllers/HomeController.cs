@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyWebsiteApp.Areas.Help.Controllers
 {
+    [Area("Help")]
     public class HomeController : Controller
     {
         public IActionResult Index()
