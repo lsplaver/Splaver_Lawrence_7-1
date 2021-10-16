@@ -6,11 +6,28 @@ using System.Threading.Tasks;
 
 namespace MyWebsiteApp.Areas.Help.Controllers
 {
+    [Area("Help")]
     public class TutorialController : Controller
     {
-        public IActionResult Index()
+        [Route("/[area]/[controller]/[action]/Page{id}")]
+        public IActionResult Index(int id)
         {
-            return View();
+            if (id == 1)
+            {
+                return View("Page1");
+            }
+            else if (id == 2)
+            {
+                return View("Page2");
+            }
+            else if (id == 3)
+            {
+                return View("Page3");
+            }    
+            else
+            {
+                return Content("Invalid entry");
+            }
         }
     }
 }
