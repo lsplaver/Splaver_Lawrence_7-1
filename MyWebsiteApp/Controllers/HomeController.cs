@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using MyWebsiteApp.Models;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -11,27 +10,26 @@ namespace MyWebsiteApp.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
-
+        [Route("/")]
         public IActionResult Index()
         {
             return View();
         }
 
-        public IActionResult Privacy()
+        [Route("/[controller]/[action]")]
+        public IActionResult Contact()
         {
+            ViewBag.Phone = "555-123-4567";
+            ViewBag.Email = "me@mywebsite.com";
+            ViewBag.Facebook = "facebook.com/mywebsite";
             return View();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        [Route("/[controller]/[action]")]
+        public IActionResult About()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            ViewBag.About = "This is the basic version of a multi-page web app that uses multiple views, nested layouts, layout sections and a Help area";
+            return View();
         }
     }
 }
