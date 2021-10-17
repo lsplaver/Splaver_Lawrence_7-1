@@ -18,10 +18,8 @@ namespace MyWebsiteApp.Controllers
         [Route("/[controller]/[action]")]
         public IActionResult Contact()
         {
-            ViewBag.Phone = "555-123-4567";
-            ViewBag.Email = "me@mywebsite.com";
-            ViewBag.Facebook = "facebook.com/mywebsite";
-            return View();
+            var contaactInfo = new List<string> { "555-123-4567", "mywebsite.com", "facebook.com/mywebsite" };
+            return View("Contact", contaactInfo);
         }
 
         [Route("/[controller]/[action]")]
