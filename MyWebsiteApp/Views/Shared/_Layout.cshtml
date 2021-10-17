@@ -16,11 +16,12 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - MyWebsiteApp</title>
+    <title>@ViewBag.Title</title>
     <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
+    <div class="container">
     <header>
         <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
             <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">My Website</a>
@@ -36,6 +37,7 @@
 
         @RenderSection("h1", false)
     </header>
+        </div>
     <div class="container">
         <main role="main" class="pb-3">
 

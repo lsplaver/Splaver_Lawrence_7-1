@@ -18,7 +18,7 @@ namespace MyWebsiteApp.Controllers
         [Route("/[controller]/[action]")]
         public IActionResult Contact()
         {
-            var contaactInfo = new List<string> { "555-123-4567", "mywebsite.com", "facebook.com/mywebsite" };
+            var contaactInfo = new List<string> { "555-123-4567", "lsplaver262@gmail.com", "facebook.com/mywebsite" };
             return View("Contact", contaactInfo);
         }
 
