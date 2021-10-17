@@ -1,9 +1,12 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    ViewBag.Title = "Tutorial Page 2";
 }
 @section h1 {
-<h1>Tutorial Page 2</h1>
+    <h1>Help Page</h1>
 }
-<p>temporary page 2</p>
+<div>
+    <h2>Tutorial - Page 2</h2>
+    <p>Here's the second thing you need to know about my website.</p>
+    <a class="btn btn-dark" asp-controller="Tutorial" asp-action="Index" asp-route-id="3">Next</a>
+    <a class="btn btn-dark" asp-controller="Tutorial" asp-action="Index" asp-route-id="1">Prev</a>
+</div>
